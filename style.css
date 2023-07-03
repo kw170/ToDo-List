@@ -112,7 +112,7 @@ button img{
 }
 .inboxTitle{
     color:white;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 }
 .sort{
@@ -142,5 +142,23 @@ button img{
     color:#E51515;
 }
 
+/* Today Page */
 
+.todayUpper{
+    margin: 50px 50px 38px 50px;
+    display: flex;
+    gap:14px;
+    align-items: flex-end;
+}
+
+.todayTitle{
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.dateTitle{
+    color: var(--light);
+    font-size:14px;
+}
 
