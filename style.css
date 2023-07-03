@@ -139,7 +139,7 @@ button img{
     font-size:14px;
 }
 .addTaskBox:hover{
-    color:#E51515;
+    color:#940808;
 }
 
 /* Today Page */
@@ -172,3 +172,51 @@ button img{
     font-size: 20px;
 }
 
+
+/* Form */
+.form{
+    color:var(--light);
+    border:solid;
+    border-radius: 6px;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    height:130px;
+    margin: 0px 80px 20px 80px;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}
+.taskName, .taskDescription, .dueDate{
+    border: none;
+    height:20px;
+    margin:4px 10px;
+    background-color: var(--dark);
+    color:var(--light)
+}
+.taskName:focus, .taskDescription:focus, .dueDate:focus{
+    color:white;
+    outline: none;
+}
+.taskName{
+    font-weight: bold;
+    font-size:16px;
+}
+
+.submit{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-right:10px;
+}
+
+.add{
+    background-color: var(--dark);
+    color:var(--light);
+    width:24px;
+    height:auto;
+}
+.add:hover{
+    filter: brightness(80%);
+}
