@@ -72,9 +72,13 @@ function createSideBar(content) {
         const inboxContent = loadInbox();
         content.appendChild(inboxContent)
       } else if (text === "Today") {
-        // loadToday();
+        deleteContent(content)
+        const todayContent = loadToday();
+        content.appendChild(todayContent)
       } else if (text === "Upcoming") {
-        // loadUpcoming();
+        deleteContent(content)
+        const upcomingContent = loadUpcoming();
+        content.appendChild(upcomingContent)
       }
     })
   })

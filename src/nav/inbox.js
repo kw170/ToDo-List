@@ -46,7 +46,6 @@ function loadInbox(){
     inbox.classList.add("inbox")
     inbox.appendChild(inboxUpper)
     inbox.appendChild(inboxLower)
-    console.log(3)
 
     return inbox
 
