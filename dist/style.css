@@ -4,7 +4,7 @@
     font-family: 'Roboto', sans-serif;
 
     --light: #888888;
-    --grey: #313131;
+    --grey: #262626;
     --dark: #202020;
 }
 
@@ -160,5 +160,15 @@ button img{
 .dateTitle{
     color: var(--light);
     font-size:14px;
+}
+
+.upcomingUpper{
+    margin: 50px 50px 38px 50px;
+}
+
+.dateTitle{
+    color:white;
+    font-weight: bold;
+    font-size: 20px;
 }
 
