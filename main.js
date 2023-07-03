@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n\nfunction loadUpcoming(){\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadUpcoming);\n\n//# sourceURL=webpack://todo-list/./src/nav/upcoming.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nfunction createUpcomingUpper(){\n    const upcomingUpper = document.createElement('div')\n    upcomingUpper.classList.add('upcomingUpper')\n\n    const date = new Date().toUTCString().slice(7, 16);\n    const dateTitle = document.createElement('div')\n    dateTitle.classList.add('dateTitle')\n    dateTitle.textContent = date\n    upcomingUpper.appendChild(dateTitle)\n\n    return upcomingUpper\n}\nfunction loadUpcoming(){\n    const upcomingContent = document.createElement('div')\n    upcomingContent.classList.add('upcomingContent')\n\n    const upcomingUpper = createUpcomingUpper()\n\n    upcomingContent.appendChild(upcomingUpper)\n\n    return upcomingContent\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadUpcoming);\n\n//# sourceURL=webpack://todo-list/./src/nav/upcoming.js?");
 
 /***/ }),
 
