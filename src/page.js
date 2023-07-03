@@ -1,3 +1,7 @@
+import loadInbox from "./nav/inbox";
+import loadToday from "./nav/today";
+import loadUpcoming from "./nav/upcoming";
+
 const container = document.querySelector(".container");
 
 function createHeader() {
@@ -14,8 +18,8 @@ function createHeader() {
   header.appendChild(right);
 
   const home = document.createElement('button');
-  home.classList.add("Home")
-  home.textContent = "Home";
+  home.classList.add("home")
+  home.innerHTML ="<img src='/../imgs/home.png'/>"
   left.appendChild(home);
 
   const search = document.createElement('input')
@@ -34,7 +38,7 @@ function createHeader() {
 
 }
 
-function createSideBar() {
+function createSideBar(content) {
   const sideBar = document.createElement("div");
   sideBar.classList.add("sideBar");
 
@@ -58,6 +62,23 @@ function createSideBar() {
   nav.appendChild(today);
   nav.appendChild(upcoming);
 
+  //Add event listeners to nav bar elements
+  Array.from(nav.children).forEach(element => {
+    element.addEventListener("click", (e) => {
+      const text = element.innerText;
+  
+      if (text === "Inbox") {
+        deleteContent(content)
+        const inboxContent = loadInbox();
+        content.appendChild(inboxContent)
+      } else if (text === "Today") {
+        // loadToday();
+      } else if (text === "Upcoming") {
+        // loadUpcoming();
+      }
+    })
+  })
+
   const projects = document.createElement('div')
   projects.classList.add("projects")
   
@@ -72,28 +93,39 @@ function createSideBar() {
   return sideBar; // Return the created sideBar element
 }
 
+function deleteContent(content){
+  if(content.hasChildNodes()){
+    content.removeChild(content.children[0])
+  }
+}
+
 function createContent() {
   const content = document.createElement("div");
   content.classList.add("content");
   return content; // Return the created content element
 }
 
-function createBottom() {
+function createBottom(content) {
   const bottom = document.createElement("div");
   bottom.classList.add("bottom");
 
-  const sideBar = createSideBar(); // Assign the created sideBar element to a variable
-  const content = createContent(); // Assign the created content element to a variable
-
+  const sideBar = createSideBar(content); // Assign the created sideBar element to a variable
+  const contentElement = createContent(); // Assign the created content element to a variable
+  contentElement.classList.add("steve")
   bottom.appendChild(sideBar);
-  bottom.appendChild(content);
+  bottom.appendChild(contentElement);
   container.appendChild(bottom);
+
+
+  contentElement.appendChild(content)
 }
+
 
 function loadPage() {
   createHeader();
-  createBottom();
-  console.log(47);
+  const content = createContent();
+  content.classList.add("steph")
+  createBottom(content);
 }
 
 export default loadPage;
