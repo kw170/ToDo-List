@@ -16,6 +16,14 @@ function addTask(newTask){
     taskLibrary.push(newTask)
 }
 
+function completeEventListener(complete, displayTasks, taskLibrary){
+    complete.addEventListener('click', ()=>{
+        displayTasks.remove()
+        taskLibrary.splice(taskLibrary.indexOf(complete), 1)
+        console.table(taskLibrary)
+    })
+}
+
 function displayTasks(taskLibrary){
     const displayTasksContainer = document.createElement('div')
     displayTasksContainer.classList.add('displayTaskContainer')
@@ -30,6 +38,8 @@ function displayTasks(taskLibrary){
         const complete = document.createElement('button')
         complete.classList.add('complete')
         complete.textContent = "o"
+
+        completeEventListener(complete,displayTasks,taskLibrary)
 
         const taskDisplayTitle = document.createElement('div')
         taskDisplayTitle.classList.add("taskDisplayTitle")

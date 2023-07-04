@@ -4,7 +4,7 @@
     "webpack-cli": "^5.1.4"
   },
   "name": "todo-list",
-  "description": "",
+  "description": "header todo <!-- add task cancel button --> task completed tasks loads on opening",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
