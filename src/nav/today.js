@@ -1,4 +1,4 @@
-
+import taskListener from "./task";
 function createTodayUpper(){
     const date = new Date().toUTCString().slice(5, 16);
 
@@ -38,52 +38,7 @@ function createTodayLower(){
     addTaskBox.appendChild(plusIcon)
     addTaskBox.appendChild(addTaskText)
 
-    addTaskBox.addEventListener('click',()=>{
-        const form = document.createElement('form')
-        form.classList.add("form")
-
-        const input = document.createElement('div')
-        input.classList.add("input")
-        form.appendChild(input)
-
-        const submit = document.createElement('div')
-        submit.classList.add("submit")
-        form.appendChild(submit)
-
-        const taskName = document.createElement('input')
-        taskName.classList.add('taskName')
-        taskName.setAttribute("type", "text")
-        taskName.setAttribute("name", taskName)
-        taskName.setAttribute("placeholder", "Task name")
-        taskName.required = true
-
-        const taskDescription = document.createElement('input')
-        taskDescription.classList.add('taskDescription')
-        taskDescription.setAttribute("type", "text")
-        taskDescription.setAttribute("name", taskDescription)
-        taskDescription.setAttribute("placeholder", "Description")
-        taskDescription.required = true
-
-        const dueDate = document.createElement('input')
-        dueDate.classList.add('dueDate')
-        dueDate.setAttribute("type", "date")
-        dueDate.setAttribute("name", dueDate)
-        dueDate.required = true
-
-        const add = document.createElement("input");
-        add.classList.add("add");
-        add.setAttribute("type", "image");
-        add.setAttribute("src", "../imgs/check.png");
-        add.setAttribute("alt", "Add");
-
-        input.append(taskName)
-        input.append(taskDescription)
-        input.append(dueDate)
-        submit.append(add)
-
-
-        todayLower.prepend(form)
-    })
+    taskListener(addTaskBox, todayLower)
 
     return todayLower
 }
