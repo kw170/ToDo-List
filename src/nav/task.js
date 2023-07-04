@@ -52,6 +52,11 @@ function displayTasks(taskLibrary){
     })
     return displayTasksContainer
 }
+function cancelEventListener(button, form){
+    button.addEventListener('click', ()=>{
+        form.remove()
+    })
+}
 
 
 function taskListener(addTaskBox, lower){
@@ -87,6 +92,12 @@ function taskListener(addTaskBox, lower){
         dueDate.setAttribute("name", dueDate)
         dueDate.required = true
 
+        const cancel = document.createElement('button')
+        cancel.classList.add("cancel")
+        cancel.textContent = "Cancel"
+
+        cancelEventListener(cancel, form)
+
         const add = document.createElement("input");
         add.classList.add("add");
         add.setAttribute("type", "image");
@@ -96,6 +107,8 @@ function taskListener(addTaskBox, lower){
         input.append(taskName)
         input.append(taskDescription)
         input.append(dueDate)
+
+        submit.append(cancel)
         submit.append(add)
 
         lower.insertBefore(form,addTaskBox)

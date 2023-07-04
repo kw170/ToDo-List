@@ -89,6 +89,7 @@ button img{
 .content{
     background-color: var(--dark);
     flex: 5 5 0;
+    overflow-y: hidden;
 }
 
 .projects{
@@ -207,11 +208,27 @@ button img{
 .submit{
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
-    margin-right:10px;
+    gap:6px;
+    border-top: solid;
+    border-width: 1px;;
+}
+
+.cancel{
+    background-color: var(--grey);
+    padding: 6px 8px;
+    color: rgb(233, 233, 233);
+    border:none;
+    border-radius: 8px;
+    font-weight:bold;
+    margin:10px 0px;
+}
+
+.cancel:hover{
+    background-color: var(--light);
 }
 
 .add{
+    margin:10px 10px;
     background-color: var(--dark);
     color:var(--light);
     width:24px;
