@@ -45,7 +45,7 @@ function createTodayLower(){
 
 function loadToday(){
     const today = document.createElement('div')
-    today.classList.add('today')
+    today.classList.add('todayContainer')
 
     const todayUpper = createTodayUpper()
     const todayLower = createTodayLower()

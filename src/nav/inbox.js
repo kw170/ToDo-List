@@ -48,7 +48,7 @@ function loadInbox(){
     const inboxUpper = createInboxUpper()
     const inboxLower = createInboxLower()
     const inbox = document.createElement('div')
-    inbox.classList.add("inbox")
+    inbox.classList.add("inboxContainer")
     inbox.appendChild(inboxUpper)
     inbox.appendChild(inboxLower)
 

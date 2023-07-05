@@ -47,15 +47,44 @@ function createSideBar(content) {
 
   const inbox = document.createElement("button");
   inbox.classList.add("inbox");
-  inbox.textContent = "Inbox";
+
+  const inboxImg = document.createElement('img')
+  inboxImg.src = "../imgs/inbox.png"
+  inbox.appendChild(inboxImg)
+
+  const inboxText = document.createElement('p')
+  inboxText.textContent = "Inbox";
+  inboxText.classList.add("inboxText")
+  inbox.appendChild(inboxText)
+
 
   const today = document.createElement("button");
   today.classList.add("today");
-  today.textContent = "Today";
+
+  const todayImg = document.createElement('img')
+  todayImg.src = "../imgs/today.png"
+  todayImg.classList.add('todayImg')
+  today.appendChild(todayImg)
+
+  const todayText = document.createElement('p')
+  today.classList.add('todayText')
+  todayText.textContent = "Today";
+  today.appendChild(todayText)
 
   const upcoming = document.createElement("button");
   upcoming.classList.add("upcoming");
-  upcoming.textContent = "Upcoming";
+
+  const upcomingImg = document.createElement('img')
+  upcoming.classList.add('upcomingImg')
+  upcomingImg.src = "../imgs/upcoming.png"
+  upcoming.appendChild(upcomingImg)
+
+  const upcomingText = document.createElement('p')
+  upcomingText.classList.add("upcomingText")
+  upcomingText.textContent = "Upcoming";
+  upcoming.appendChild(upcomingText)
+
+
 
   sideBar.appendChild(nav);
   nav.appendChild(inbox);

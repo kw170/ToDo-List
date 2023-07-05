@@ -63,6 +63,7 @@
     "path-parse": "^1.0.7",
     "picocolors": "^1.0.0",
     "pkg-dir": "^4.2.0",
+    "process": "^0.11.10",
     "punycode": "^2.3.0",
     "randombytes": "^2.1.0",
     "rechoir": "^0.8.0",

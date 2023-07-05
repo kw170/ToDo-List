@@ -13,7 +13,7 @@ function createUpcomingUpper(){
 }
 function loadUpcoming(){
     const upcomingContent = document.createElement('div')
-    upcomingContent.classList.add('upcomingContent')
+    upcomingContent.classList.add('upcomingContainer')
 
     const upcomingUpper = createUpcomingUpper()
 
