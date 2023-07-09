@@ -170,7 +170,7 @@ button img{
 .todayUpper{
     margin: 50px 50px 38px 50px;
     display: flex;
-    gap:14px;
+    gap:8px;
     align-items: flex-end;
 }
 
@@ -182,7 +182,9 @@ button img{
 
 .dateTitle{
     color: var(--light);
-    font-size:10px;
+    font-size:14px;
+    font-weight: bold;
+    margin-bottom: 1px;
 }
 .upcomingContainer{
 
@@ -194,13 +196,6 @@ button img{
     width: 900px;
     margin: 50px 0px 38px;
 }
-
-.dateTitle{
-    color:white;
-    font-weight: bold;
-    font-size: 20px;
-}
-
 
 /* Form */
 .form{

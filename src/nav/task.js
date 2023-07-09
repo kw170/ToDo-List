@@ -31,7 +31,6 @@ function completeEventListener(complete, displayTasks) {
 }
 
 function displayTasks(taskLibrary) {
-console.log("display tasks")
   const displayTasksContainer = document.createElement('div');
   displayTasksContainer.classList.add('displayTaskContainer');
   taskLibrary.forEach((task) => {
@@ -66,6 +65,52 @@ console.log("display tasks")
     displayTasks.appendChild(firstRow);
     displayTasks.appendChild(taskDisplayDescription);
     displayTasks.appendChild(taskDisplayDate);
+  });
+  return displayTasksContainer;
+}
+
+function displayTasksDueToday(taskLibrary){
+  const displayTasksContainer = document.createElement('div');
+  displayTasksContainer.classList.add('displayTaskContainer');
+  const date = new Date();
+  let currentDay= String(date.getDate()).padStart(2, '0');
+  let currentMonth = String(date.getMonth()+1).padStart(2,"0");
+  let currentYear = date.getFullYear();
+  let currentDate = `${currentYear}-${currentMonth}-${currentDay}`
+  taskLibrary.forEach((task) => {
+    if(task.date == currentDate){
+        const displayTasks = document.createElement('div');
+        displayTasks.classList.add('displayTasks');
+        displayTasksContainer.appendChild(displayTasks);
+
+        const firstRow = document.createElement('div');
+        firstRow.classList.add('firstRow');
+
+        const complete = document.createElement('button');
+        complete.classList.add('complete');
+        complete.textContent = 'o';
+
+        completeEventListener(complete, displayTasks);
+
+        const taskDisplayTitle = document.createElement('div');
+        taskDisplayTitle.classList.add('taskDisplayTitle');
+        taskDisplayTitle.textContent = task.title;
+
+        const taskDisplayDescription = document.createElement('div');
+        taskDisplayDescription.classList.add('taskDisplayDescription');
+        taskDisplayDescription.textContent = task.description;
+
+        const taskDisplayDate = document.createElement('div');
+        taskDisplayDate.classList.add('taskDisplayDate');
+        taskDisplayDate.textContent = task.date;
+
+        firstRow.appendChild(complete);
+        firstRow.appendChild(taskDisplayTitle);
+
+        displayTasks.appendChild(firstRow);
+        displayTasks.appendChild(taskDisplayDescription);
+        displayTasks.appendChild(taskDisplayDate);
+    }
   });
   return displayTasksContainer;
 }
@@ -144,4 +189,4 @@ function taskListener(addTaskBox, lower) {
   });
 }
 
-export { taskListener, displayTasks, Library, taskLibrary };
+export { taskListener, displayTasks, displayTasksDueToday, Library, taskLibrary };

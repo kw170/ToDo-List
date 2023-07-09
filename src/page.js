@@ -1,8 +1,8 @@
-import {loadInbox} from "./nav/inbox";
-import { displayTasks } from "./nav/task.js";
+import { loadInbox } from "./nav/inbox";
+import { displayTasks, displayTasksDueToday } from "./nav/task";
 import { taskLibrary } from "./nav/task";
-import {loadToday} from "./nav/today";
-import {loadUpcoming} from "./nav/upcoming";
+import { loadToday } from "./nav/today";
+import { loadUpcoming } from "./nav/upcoming";
 
 const container = document.querySelector(".container");
 
@@ -98,10 +98,8 @@ function createSideBar(content) {
         const inboxContent = loadInbox();
         content.appendChild(inboxContent)
 
-        const inbox = document.querySelector(".inbox");
         const inboxLower = inboxContent.children[1]
         if (taskLibrary.length > 0) {
-          console.log("here")
           const displayTasksContainer = displayTasks(taskLibrary);
           inboxLower.prepend(displayTasksContainer)
         }
@@ -110,6 +108,14 @@ function createSideBar(content) {
         deleteContent(content)
         const todayContent = loadToday();
         content.appendChild(todayContent)
+
+      const inboxLower = todayContent.children[1]
+      if (taskLibrary.length > 0) {
+        const displayTasksContainer = displayTasksDueToday(taskLibrary);
+        inboxLower.prepend(displayTasksContainer)
+      }
+
+
       } else if (text === "Upcoming") {
         deleteContent(content)
         const upcomingContent = loadUpcoming();
