@@ -64,6 +64,7 @@ button img{
 /* Bottom */
 .bottom{
     display: flex;
+    justify-content: center;
     height:92vh;
 }
 /* Side Bar */
@@ -109,6 +110,10 @@ button img{
     justify-content:center;
 }
 
+.steph{
+    max-width: 1000px;
+}
+
 .projects{
     display: flex;
     flex-direction: column;
@@ -130,6 +135,11 @@ button img{
     border-bottom: 1px solid var(--light); 
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     height: 30px;
+}
+.inboxLower{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
 }
 .inboxTitle{
     color:white;
@@ -169,8 +179,10 @@ button img{
 }
 .todayUpper{
     margin: 50px 50px 38px 50px;
+    width: 900px;
     display: flex;
-    gap:8px;
+    justify-content: space-between;
+    width:100%;
     align-items: flex-end;
 }
 
@@ -187,14 +199,20 @@ button img{
     margin-bottom: 1px;
 }
 .upcomingContainer{
-
+    width:900px;
     display: flex;
-    justify-content: center;
+    flex-direction:column;
 }
 .upcomingUpper{
-    flex: 1 1 0;
-    width: 900px;
-    margin: 50px 0px 38px;
+    margin: 50px 50px 38px;
+    font-size:300px;
+}
+.upcomingLower{
+
+}
+.upcomingTitle{
+    color:white;
+    font-size:20px;
 }
 
 /* Form */
