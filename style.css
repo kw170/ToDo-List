@@ -24,7 +24,10 @@
     align-items: center;
 }
 .left{
-    margin-left: 10px;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    gap:18px;
 }
 .home{
     background-color: var(--grey);
@@ -37,12 +40,21 @@ button img{
 }
 
 .search{
-    border-radius: 4px;
+    border-radius: 6px;
     border: none;
+    background-color: var(--light);
+    padding:4px 20px 4px 6px;
+    color:white;
 }
-
-.search:focus{
+.seach:hover{
     outline: none;
+    background-color: var(--dark);
+    color:var(--light);
+}
+.search:focus {
+    outline: none;
+    background-color: var(--dark);
+    color:var(--light);
 }
 
 .right{
@@ -77,7 +89,7 @@ button img{
 }
 .nav button{
     border-radius: 6px;
-    font-size: 18px;
+    font-size: 16px;
     width:50px;
     background-color: var(--grey);
     color:white;
@@ -93,6 +105,8 @@ button img{
     background-color: var(--dark);
     flex: 5 5 0;
     overflow-y: hidden;
+    display: flex;
+    justify-content:center;
 }
 
 .projects{
@@ -101,11 +115,14 @@ button img{
 }
 .projectTitle{
     font-weight:bold;
-    font-size:20px;
+    font-size:18px;
     margin-left: 20px;
     color:white;
 }
+.inboxContainer{
+    width:900px;
 
+}
 .inboxUpper{
     margin: 50px 50px 30px 50px;
     display: flex;
@@ -147,7 +164,9 @@ button img{
 }
 
 /* Today Page */
-
+.todayContainer{
+    width: 900px;
+}
 .todayUpper{
     margin: 50px 50px 38px 50px;
     display: flex;
@@ -163,10 +182,17 @@ button img{
 
 .dateTitle{
     color: var(--light);
-    font-size:14px;
+    font-size:10px;
+}
+.upcomingContainer{
+
+    display: flex;
+    justify-content: center;
 }
 .upcomingUpper{
-    margin: 50px 50px 38px 50px;
+    flex: 1 1 0;
+    width: 900px;
+    margin: 50px 0px 38px;
 }
 
 .dateTitle{
@@ -249,7 +275,7 @@ button img{
 .firstRow{
     display:flex;
     align-items: center;
-    gap:5px;
+    gap:10px;
 }
 .complete{
     background-color: var(--dark);
@@ -266,7 +292,7 @@ button img{
     font-size:16px;
 }
 .taskDisplayDescription, .taskDisplayDate{
-    margin:6px 18px;
+    margin:6px 22px;
     font-size:14px;
 }
 .taskDisplayDate{
