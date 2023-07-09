@@ -22,24 +22,6 @@ function createTodayUpper(){
 function createTodayLower(){
     const todayLower = document.createElement('div')
     todayLower.classList.add('inboxLower')
-
-    
-    const addTaskBox = document.createElement('button')
-    addTaskBox.classList.add('addTaskBox')
-    todayLower.appendChild(addTaskBox)
-
-    const plusIcon = document.createElement('span') 
-    plusIcon.classList.add("plusIcon")
-    plusIcon.innerHTML = "<img src ='../imgs/plus.png'>"
-    const addTaskText = document.createElement('span')
-    addTaskText.classList.add("addTaskText")
-    addTaskText.textContent = "Add Task"
-
-    addTaskBox.appendChild(plusIcon)
-    addTaskBox.appendChild(addTaskText)
-
-    taskListener(addTaskBox, todayLower)
-
     return todayLower
 }
 

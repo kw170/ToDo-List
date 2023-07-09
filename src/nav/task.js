@@ -115,6 +115,55 @@ function displayTasksDueToday(taskLibrary){
   return displayTasksContainer;
 }
 
+
+
+function displayTasksUpcoming(taskLibrary){
+    const displayTasksContainer = document.createElement('div');
+    displayTasksContainer.classList.add('displayTaskContainer');
+    const date = new Date();
+    let currentMonth = String(date.getMonth()+1).padStart(2,"0");
+    taskLibrary.forEach((task) => {
+        console.log(task.date.substr(5,2))
+        console.log(currentMonth)
+      if(task.date.substr(5,2) == currentMonth){
+          const displayTasks = document.createElement('div');
+          displayTasks.classList.add('displayTasks');
+          displayTasksContainer.appendChild(displayTasks);
+  
+          const firstRow = document.createElement('div');
+          firstRow.classList.add('firstRow');
+  
+          const complete = document.createElement('button');
+          complete.classList.add('complete');
+          complete.textContent = 'o';
+  
+          completeEventListener(complete, displayTasks);
+  
+          const taskDisplayTitle = document.createElement('div');
+          taskDisplayTitle.classList.add('taskDisplayTitle');
+          taskDisplayTitle.textContent = task.title;
+  
+          const taskDisplayDescription = document.createElement('div');
+          taskDisplayDescription.classList.add('taskDisplayDescription');
+          taskDisplayDescription.textContent = task.description;
+  
+          const taskDisplayDate = document.createElement('div');
+          taskDisplayDate.classList.add('taskDisplayDate');
+          taskDisplayDate.textContent = task.date;
+  
+          firstRow.appendChild(complete);
+          firstRow.appendChild(taskDisplayTitle);
+  
+          displayTasks.appendChild(firstRow);
+          displayTasks.appendChild(taskDisplayDescription);
+          displayTasks.appendChild(taskDisplayDate);
+      }
+    });
+    return displayTasksContainer;
+  }
+
+
+
 function cancelEventListener(button, form) {
   button.addEventListener('click', () => {
     form.remove();
@@ -189,4 +238,4 @@ function taskListener(addTaskBox, lower) {
   });
 }
 
-export { taskListener, displayTasks, displayTasksDueToday, Library, taskLibrary };
+export { taskListener, displayTasks, displayTasksDueToday, displayTasksUpcoming, Library, taskLibrary };

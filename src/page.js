@@ -1,5 +1,5 @@
 import { loadInbox } from "./nav/inbox";
-import { displayTasks, displayTasksDueToday } from "./nav/task";
+import { displayTasks, displayTasksDueToday, displayTasksUpcoming } from "./nav/task";
 import { taskLibrary } from "./nav/task";
 import { loadToday } from "./nav/today";
 import { loadUpcoming } from "./nav/upcoming";
@@ -105,21 +105,26 @@ function createSideBar(content) {
         }
 
       } else if (text === "Today") {
-        deleteContent(content)
-        const todayContent = loadToday();
-        content.appendChild(todayContent)
+          deleteContent(content)
+          const todayContent = loadToday();
+          content.appendChild(todayContent)
 
-      const inboxLower = todayContent.children[1]
-      if (taskLibrary.length > 0) {
-        const displayTasksContainer = displayTasksDueToday(taskLibrary);
-        inboxLower.prepend(displayTasksContainer)
-      }
-
+        const inboxLower = todayContent.children[1]
+        if (taskLibrary.length > 0) {
+          const displayTasksContainer = displayTasksDueToday(taskLibrary);
+          inboxLower.prepend(displayTasksContainer)
+        }
 
       } else if (text === "Upcoming") {
-        deleteContent(content)
-        const upcomingContent = loadUpcoming();
-        content.appendChild(upcomingContent)
+          deleteContent(content)
+          const upcomingContainer = loadUpcoming();
+
+          content.appendChild(upcomingContainer)
+          const upcomingLower = upcomingContainer.children[1]
+          if (taskLibrary.length > 0) {
+            const displayTasksContainer = displayTasksUpcoming(taskLibrary);
+            upcomingLower.prepend(displayTasksContainer)
+          }
       }
     })
   })
