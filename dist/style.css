@@ -114,15 +114,31 @@ button img{
     max-width: 1000px;
 }
 
-.projects{
+.projectsNav{
     display: flex;
     flex-direction: column;
 }
+.projectHeader{
+    display:flex;
+    gap: 155px;
+    align-items: center;
+}
 .projectTitle{
     font-weight:bold;
-    font-size:18px;
+    font-size:16px;
     margin-left: 20px;
-    color:white;
+    color:var(--light);
+}
+.projectsPlus{
+    color:var(--light);
+    background-color: var(--grey);
+    border:none;
+    font-size: 28px;
+    padding:0px 1px;
+}
+
+.projectsPlus:hover{
+    color: white;
 }
 .inboxContainer{
     width:900px;
@@ -206,9 +222,6 @@ button img{
 .upcomingUpper{
     margin: 50px 50px 38px;
     font-size:300px;
-}
-.upcomingLower{
-
 }
 .upcomingTitle{
     color:white;

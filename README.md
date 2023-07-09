@@ -6,8 +6,8 @@ todo
 <!-- add task cancel button -->
 <!-- task completed -->
 <!-- inbox loads on webpage load -->
-tasks loads on opening
-filter task with today as due date
+<!-- tasks loads on opening -->
+<!-- filter task with today as due date -->
+projects
 
 web storage api
-projects

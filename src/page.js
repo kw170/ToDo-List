@@ -131,13 +131,22 @@ function createSideBar(content) {
 
   const projects = document.createElement('div')
   projects.classList.add("projects")
+
+  const projectHeader = document.createElement('div')
+  projectHeader.classList.add('projectHeader')
   
   const projectTitle = document.createElement("p")
   projectTitle.classList.add("projectTitle")
   projectTitle.textContent = "Projects"
 
+  const projectPlus = document.createElement('button')
+  projectPlus.classList.add("projectsPlus")
+  projectPlus.textContent = "+"
+
   sideBar.appendChild(projects)
-  projects.appendChild(projectTitle)
+  projects.appendChild(projectHeader)
+  projectHeader.appendChild(projectTitle)
+  projectHeader.appendChild(projectPlus)
 
   return sideBar; // Return the created sideBar element
 }
