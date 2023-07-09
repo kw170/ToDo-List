@@ -1,6 +1,8 @@
-import loadInbox from "./nav/inbox";
-import loadToday from "./nav/today";
-import loadUpcoming from "./nav/upcoming";
+import {loadInbox} from "./nav/inbox";
+import { displayTasks } from "./nav/task.js";
+import { taskLibrary } from "./nav/task";
+import {loadToday} from "./nav/today";
+import {loadUpcoming} from "./nav/upcoming";
 
 const container = document.querySelector(".container");
 
@@ -25,11 +27,6 @@ function createHeader() {
   const search = document.createElement('input')
   search.classList.add("search")
   left.appendChild(search)
-
-  const plus = document.createElement("button")
-  plus.classList.add("plus")
-  plus.textContent = "Plus"
-  right.appendChild(plus)
 
   const profile = document.createElement("button")
   profile.classList.add("profile")
@@ -100,6 +97,15 @@ function createSideBar(content) {
         deleteContent(content)
         const inboxContent = loadInbox();
         content.appendChild(inboxContent)
+
+        const inbox = document.querySelector(".inbox");
+        const inboxLower = inboxContent.children[1]
+        if (taskLibrary.length > 0) {
+          console.log("here")
+          const displayTasksContainer = displayTasks(taskLibrary);
+          inboxLower.prepend(displayTasksContainer)
+        }
+
       } else if (text === "Today") {
         deleteContent(content)
         const todayContent = loadToday();
@@ -121,7 +127,6 @@ function createSideBar(content) {
 
   sideBar.appendChild(projects)
   projects.appendChild(projectTitle)
-
 
   return sideBar; // Return the created sideBar element
 }
@@ -155,10 +160,15 @@ function createBottom(content) {
 
 
 function loadPage() {
-  createHeader();
-  const content = createContent();
-  content.classList.add("steph")
-  createBottom(content);
+  window.addEventListener("load", () => {
+    createHeader();
+    const content = createContent();
+    content.classList.add("steph");
+    createBottom(content);
+
+    const inboxContent = loadInbox();
+    content.appendChild(inboxContent);
+  });
 }
 
-export default loadPage;
+export {loadPage};

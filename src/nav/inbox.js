@@ -1,4 +1,4 @@
-import taskListener from "./task"
+import {taskListener} from "./task"
 function createInboxUpper(){
     const inboxUpper = document.createElement('div')
     inboxUpper.classList.add('inboxUpper')
@@ -43,7 +43,6 @@ function createInboxLower(){
 
 
 
-
 function loadInbox(){
     const inboxUpper = createInboxUpper()
     const inboxLower = createInboxLower()
@@ -55,4 +54,4 @@ function loadInbox(){
     return inbox
 
 }
-export default loadInbox;
+export {loadInbox};

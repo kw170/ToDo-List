@@ -22,4 +22,4 @@ function loadUpcoming(){
     return upcomingContent
 }
 
-export default loadUpcoming;
+export {loadUpcoming};

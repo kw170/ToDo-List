@@ -1,4 +1,4 @@
-import taskListener from "./task";
+import {taskListener} from "./task";
 function createTodayUpper(){
     const date = new Date().toUTCString().slice(5, 16);
 
@@ -55,4 +55,4 @@ function loadToday(){
 
     return today
 }
-export default loadToday;
+export {loadToday};
