@@ -166,8 +166,10 @@ function createSideBar(content) {
     projectSubmitButtons.appendChild(projectCancel)
     projectCancel.textContent = "Cancel"
 
+    projectPlus.remove();
     projectCancel.addEventListener('click',()=>{
       projectForm.remove()
+      projectHeader.appendChild(projectPlus)
     })
 
     const projectAdd = document.createElement('input');
@@ -176,6 +178,9 @@ function createSideBar(content) {
     projectAdd.type = 'submit';
     projectAdd.value = "Add"
     projects.appendChild(projectForm)
+    projectAdd.addEventListener('submit',()=>{
+      projectHeader.appendChild(projectPlus)
+    })
 
   })
 
