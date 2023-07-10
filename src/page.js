@@ -3,7 +3,6 @@ import { displayTasks, displayTasksDueToday, displayTasksUpcoming } from "./nav/
 import { taskLibrary } from "./nav/task";
 import { loadToday } from "./nav/today";
 import { loadUpcoming } from "./nav/upcoming";
-import { loadProjects } from "./projects";
 
 const container = document.querySelector(".container");
 
@@ -172,15 +171,47 @@ function createSideBar(content) {
       projectHeader.appendChild(projectPlus)
     })
 
+    const projectsList = document.createElement('div')
+    projectsList.classList.add('projectsList')
+    projects.appendChild(projectsList)
+
     const projectAdd = document.createElement('input');
     projectAdd.classList.add('projectAdd');
     projectSubmitButtons.appendChild(projectAdd);
     projectAdd.type = 'submit';
     projectAdd.value = "Add"
     projects.appendChild(projectForm)
-    projectAdd.addEventListener('submit',()=>{
-      projectHeader.appendChild(projectPlus)
-    })
+
+
+
+    projectForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent the default form submission behavior
+    
+      // Code executed when the form is submitted
+      const projectName = projectForm.querySelector('.projectName');
+      const projectsList = document.querySelector('.projectsList');
+      const projectHeader = document.querySelector('.projectHeader')
+    
+      const pannelProject = document.createElement('button');
+      pannelProject.classList.add('pannelProject');
+
+      const projectImg = document.createElement('button');
+      projectImg.classList.add('projectImg');
+      projectImg.innerHTML = '<img src="../imgs/project.png">';
+      
+    
+      const pannelProjectTitle = document.createElement('p');
+      pannelProjectTitle.classList.add('pannelProjectTitle');
+      pannelProjectTitle.textContent = projectName.value;
+    
+      projectsList.appendChild(pannelProject);
+      pannelProject.append(projectImg)
+      pannelProject.appendChild(pannelProjectTitle);
+    
+      projectForm.reset();
+      projectForm.remove();
+      projectHeader.append(projectPlus)
+    });
 
   })
 

@@ -78,10 +78,12 @@ button img{
     max-width: 270px;
     gap: 40px;
 }
+
 .inbox, .today, .upcoming{
     display:flex;
     gap:10px;
 }
+
 .nav{
     margin-top: 30px;
     display: flex;
@@ -89,6 +91,7 @@ button img{
     gap: 6px;
     align-items: center;
 }
+
 .nav button{
     border-radius: 6px;
     font-size: 16px;
@@ -116,24 +119,26 @@ button img{
 }
 
 /* Projects */
+.projects{
+    gap:40px;
+}
 .projectsNav{
     display: flex;
     flex-direction: column;
 }
 .projectHeader{
     display:flex;
-    gap: 155px;
+    gap: 150px;
     align-items: center;
 }
 .projectTitle{
     font-weight:bold;
-    font-size:16px;
+    font-size:18px;
     margin-left: 20px;
-    color:white
+    color:white;
 }
 .projectsPlus{
     color: white;
-
     background-color: var(--grey);
     border:none;
     font-size: 28px;
@@ -196,6 +201,34 @@ button img{
     font-weight:bold;
 }
 
+.projectsList{
+    display: flex;
+    flex-direction: column;
+}
+.pannelProject{
+    margin:0 10px 0 20px;
+    display: flex;
+    justify-content: flex-start;
+    padding:6px 0px;
+    border-radius: 6px;
+    background-color: var(--grey);
+    border: none;
+    color:white;
+    align-items: center;
+    gap:10px;
+}
+
+.pannelProject:hover{
+    filter: brightness(80%);
+}
+.projectImg{
+    margin-left: 5px;
+    background-color: var(--grey);
+    border:none;
+    height:30px;
+}
+
+/* Inbox */
 .inboxContainer{
     width:900px;
 
@@ -250,11 +283,9 @@ button img{
     width: 900px;
 }
 .todayUpper{
-    margin: 50px 50px 38px 50px;
-    width: 900px;
+    margin: 50px 50px 30px 50px;
     display: flex;
     justify-content: space-between;
-    width:100%;
     align-items: flex-end;
 }
 
@@ -269,6 +300,7 @@ button img{
     font-size:14px;
     font-weight: bold;
     margin-bottom: 1px;
+    min-width:75px;
 }
 .upcomingContainer{
     width:900px;
