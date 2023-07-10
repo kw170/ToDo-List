@@ -43,7 +43,7 @@ button img{
 .search{
     border-radius: 6px;
     border: none;
-    background-color: var(--light);
+    background-color: var(--darkGrey);
     padding:4px 20px 4px 6px;
     color:white;
 }
@@ -129,10 +129,11 @@ button img{
     font-weight:bold;
     font-size:16px;
     margin-left: 20px;
-    color:var(--light);
+    color:white
 }
 .projectsPlus{
-    color:var(--light);
+    color: white;
+
     background-color: var(--grey);
     border:none;
     font-size: 28px;
@@ -140,7 +141,7 @@ button img{
 }
 
 .projectsPlus:hover{
-    color: white;
+    color:var(--light);
 }
 
 .projectForm{
@@ -152,12 +153,12 @@ button img{
     gap:12px;
 }
 .projectName{
-    background-color: var(--darkGrey);
+    background-color: rgb(226, 226, 226);
     width:200px;
-    border-radius: 6px;
+    border-radius: 5px;
     border: none;
     height:30px;
-    color:white;
+    color:var(--dark);
     font-weight:bold;
 }
 .projectName:focus{
@@ -170,9 +171,12 @@ button img{
     gap: 8px;
     width:100%;
 }
+
+.projectCancel:hover, .projectAdd:hover{
+    filter:brightness(85%)
+}
+
 .projectCancel{
-    /* width:50px;
-    height:30px; */
     padding: 6px 26px;
     color: rgb(233, 233, 233);
     border-radius: 8px;
@@ -291,10 +295,12 @@ button img{
     height:130px;
     margin: 0px 80px 20px 80px;
 }
+
 .input{
     display: flex;
     flex-direction: column;
 }
+
 .taskName, .taskDescription, .dueDate{
     border: none;
     height:20px;
@@ -302,10 +308,12 @@ button img{
     background-color: var(--dark);
     color:var(--light)
 }
+
 .taskName:focus, .taskDescription:focus, .dueDate:focus{
     color:white;
     outline: none;
 }
+
 .taskName{
     font-weight: bold;
     font-size:16px;
