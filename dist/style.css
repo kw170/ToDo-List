@@ -3,7 +3,8 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 
-    --light: #888888;
+    --light: #777777;
+    --darkGrey: #3d3d3d;
     --grey: #262626;
     --dark: #202020;
 }
@@ -114,6 +115,7 @@ button img{
     max-width: 1000px;
 }
 
+/* Projects */
 .projectsNav{
     display: flex;
     flex-direction: column;
@@ -140,6 +142,56 @@ button img{
 .projectsPlus:hover{
     color: white;
 }
+
+.projectForm{
+    height:100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:12px;
+}
+.projectName{
+    background-color: var(--darkGrey);
+    width:200px;
+    border-radius: 6px;
+    border: none;
+    height:30px;
+    color:white;
+    font-weight:bold;
+}
+.projectName:focus{
+    outline:none;
+
+}
+.projectSubmitButtons{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width:100%;
+}
+.projectCancel{
+    /* width:50px;
+    height:30px; */
+    padding: 6px 26px;
+    color: rgb(233, 233, 233);
+    border-radius: 8px;
+    background-color: var(--darkGrey);
+    background-color:rgb(248, 91, 91);
+    border:none;
+    font-weight:bold;
+}
+
+.projectAdd{
+    padding: 6px 34px;
+    color: rgb(233, 233, 233);
+    border-radius: 8px;
+    background-color: var(--darkGrey);
+    background-color: rgb(93, 194, 93);
+    border:none;
+    font-weight:bold;
+}
+
 .inboxContainer{
     width:900px;
 

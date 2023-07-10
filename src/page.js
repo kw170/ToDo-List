@@ -3,6 +3,7 @@ import { displayTasks, displayTasksDueToday, displayTasksUpcoming } from "./nav/
 import { taskLibrary } from "./nav/task";
 import { loadToday } from "./nav/today";
 import { loadUpcoming } from "./nav/upcoming";
+import { loadProjects } from "./projects";
 
 const container = document.querySelector(".container");
 
@@ -142,6 +143,53 @@ function createSideBar(content) {
   const projectPlus = document.createElement('button')
   projectPlus.classList.add("projectsPlus")
   projectPlus.textContent = "+"
+
+  projectPlus.addEventListener('click', ()=>{
+    const projectForm = document.createElement('form')
+    projectForm.classList.add('projectForm');
+
+    const projectName = document.createElement('input');
+    projectName.classList.add('projectName');
+    projectForm.appendChild(projectName);
+
+    projectName.setAttribute('type', 'text');
+    projectName.setAttribute('name', 'taskName');
+    // projectName.setAttribute('placeholder', 'Project name');
+    projectName.required = true;
+
+    const projectSubmitButtons = document.createElement('div')
+    projectSubmitButtons.classList.add('projectSubmitButtons')
+    projectForm.appendChild(projectSubmitButtons)
+
+    const projectCancel = document.createElement('button')
+    projectCancel.classList.add('projectCancel')
+    projectSubmitButtons.appendChild(projectCancel)
+    projectCancel.textContent = "Cancel"
+
+    projectCancel.addEventListener('click',()=>{
+      projectForm.remove()
+    })
+
+    const projectAdd = document.createElement('input');
+    projectAdd.classList.add('projectAdd');
+    projectSubmitButtons.appendChild(projectAdd);
+    projectAdd.type = 'submit';
+    projectAdd.value = "Add"
+    projects.appendChild(projectForm)
+
+  })
+
+
+
+
+
+  
+
+
+
+
+
+
 
   sideBar.appendChild(projects)
   projects.appendChild(projectHeader)
