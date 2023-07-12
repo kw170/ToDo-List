@@ -21,7 +21,7 @@ function createHeader() {
 
   const home = document.createElement('button');
   home.classList.add("home")
-  home.innerHTML ="<img src='/../imgs/home.png'/>"
+  home.innerHTML ="<img src='/../dist/imgs/home.png'/>"
   left.appendChild(home);
 
   const search = document.createElement('input')
@@ -46,7 +46,7 @@ function createSideBar(content) {
   inbox.classList.add("inbox");
 
   const inboxImg = document.createElement('img')
-  inboxImg.src = "../imgs/inbox.png"
+  inboxImg.src = "../dist/imgs/inbox.png"
   inbox.appendChild(inboxImg)
 
   const inboxText = document.createElement('p')
@@ -59,7 +59,7 @@ function createSideBar(content) {
   today.classList.add("today");
 
   const todayImg = document.createElement('img')
-  todayImg.src = "../imgs/today.png"
+  todayImg.src = "../dist/imgs/today.png"
   todayImg.classList.add('todayImg')
   today.appendChild(todayImg)
 
@@ -73,7 +73,7 @@ function createSideBar(content) {
 
   const upcomingImg = document.createElement('img')
   upcoming.classList.add('upcomingImg')
-  upcomingImg.src = "../imgs/upcoming.png"
+  upcomingImg.src = "../dist/imgs/upcoming.png"
   upcoming.appendChild(upcomingImg)
 
   const upcomingText = document.createElement('p')
@@ -153,7 +153,7 @@ function createSideBar(content) {
 
     projectName.setAttribute('type', 'text');
     projectName.setAttribute('name', 'taskName');
-    // projectName.setAttribute('placeholder', 'Project name');
+
     projectName.required = true;
 
     const projectSubmitButtons = document.createElement('div')
@@ -197,7 +197,7 @@ function createSideBar(content) {
 
       const projectImg = document.createElement('button');
       projectImg.classList.add('projectImg');
-      projectImg.innerHTML = '<img src="../imgs/project.png">';
+      projectImg.innerHTML = '<img src="../dist/imgs/project.png">';
       
     
       const pannelProjectTitle = document.createElement('p');

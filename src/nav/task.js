@@ -212,7 +212,7 @@ function taskListener(addTaskBox, lower) {
     const add = document.createElement('input');
     add.classList.add('add');
     add.setAttribute('type', 'image');
-    add.setAttribute('src', '../imgs/check.png');
+    add.setAttribute('src', '../dist/imgs/check.png');
     add.setAttribute('alt', 'Add');
 
     input.append(taskName);

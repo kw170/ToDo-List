@@ -28,7 +28,7 @@ function createInboxLower(){
 
     const plusIcon = document.createElement('span') 
     plusIcon.classList.add("plusIcon")
-    plusIcon.innerHTML = "<img src ='../imgs/plus.png'>"
+    plusIcon.innerHTML = "<img src ='../dist/imgs/plus.png'>"
     const addTaskText = document.createElement('span')
     addTaskText.classList.add("addTaskText")
     addTaskText.textContent = "Add Task"
