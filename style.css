@@ -228,12 +228,14 @@ button img{
     height:30px;
 }
 
+/* Project Content */
+
 /* Inbox */
-.inboxContainer{
+.inboxContainer, .projectContainer{
     width:900px;
 
 }
-.inboxUpper{
+.inboxUpper, .projectUpper{
     margin: 50px 50px 30px 50px;
     display: flex;
     justify-content: space-between;
@@ -246,7 +248,7 @@ button img{
     flex-direction: column;
     gap:8px;
 }
-.inboxTitle{
+.inboxTitle, .projectContainerTitle{
     color:white;
     font-size: 20px;
     font-weight: bold;
