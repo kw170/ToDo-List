@@ -9,10 +9,10 @@ function createInboxUpper(){
     inboxTitle.textContent = "Inbox"
     inboxUpper.appendChild(inboxTitle)
 
-    const sort = document.createElement('button')
-    sort.classList.add('sort')
-    sort.textContent = "Sort"
-    inboxUpper.appendChild(sort)
+    // const sort = document.createElement('button')
+    // sort.classList.add('sort')
+    // sort.textContent = "Sort"
+    // inboxUpper.appendChild(sort)
 
     return inboxUpper
 }

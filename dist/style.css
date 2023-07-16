@@ -34,7 +34,12 @@
     background-color: var(--grey);
     border:none;
 }
-
+.profile{
+    height:0px;
+    width:auto;
+    background-color: var(--grey);
+    border:none;
+}
 button img{
     height:20px;
     width:auto;
@@ -341,6 +346,9 @@ button img{
     margin:4px 10px;
     background-color: var(--dark);
     color:var(--light)
+}
+.taskName{
+    color:white;
 }
 
 .taskName:focus, .taskDescription:focus, .dueDate:focus{

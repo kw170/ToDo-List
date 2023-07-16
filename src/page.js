@@ -36,7 +36,7 @@ function createHeader() {
 
   const home = document.createElement('button');
   home.classList.add("home")
-  home.innerHTML ="<img src='/../dist/imgs/home.png'/>"
+  home.innerHTML ="<img src='./../dist/imgs/home.png'/>"
   left.appendChild(home);
 
   const search = document.createElement('input')
@@ -45,7 +45,7 @@ function createHeader() {
 
   const profile = document.createElement("button")
   profile.classList.add("profile")
-  profile.textContent = "Profile"
+  profile.innerHTML ="<img src='./../dist/imgs/profile.png'/>"
   right.appendChild(profile)
 
 }
