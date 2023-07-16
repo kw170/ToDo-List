@@ -3,6 +3,21 @@ import { displayTasks, displayTasksDueToday, displayTasksUpcoming } from "./nav/
 import { taskLibrary } from "./nav/task";
 import { loadToday } from "./nav/today";
 import { loadUpcoming } from "./nav/upcoming";
+import { loadProjectContent, projectLibrary } from "./projects";
+
+class Project {
+  constructor(title) {
+    this.title = title;
+    this.tasks = []
+    projectTasks.push(this)
+  }
+
+  static addTask(task) {
+    tasks.push(task)
+    return new Project(projectName, task);
+  }
+}
+let projectTasks = []
 
 const container = document.querySelector(".container");
 
@@ -185,8 +200,7 @@ function createSideBar(content) {
 
 
     projectForm.addEventListener('submit', (e) => {
-      e.preventDefault(); // Prevent the default form submission behavior
-    
+      e.preventDefault();
       // Code executed when the form is submitted
       const projectName = projectForm.querySelector('.projectName');
       const projectsList = document.querySelector('.projectsList');
@@ -207,24 +221,28 @@ function createSideBar(content) {
       projectsList.appendChild(pannelProject);
       pannelProject.append(projectImg)
       pannelProject.appendChild(pannelProjectTitle);
-    
+      
+      const newProject = new Project(pannelProjectTitle.textContent)
+      console.log(newProject)
+      console.table(projectTasks)
+
       projectForm.reset();
       projectForm.remove();
       projectHeader.append(projectPlus)
+
+      pannelProject.addEventListener('click',()=>{
+
+        const pannelProjectTitle = pannelProject.querySelector('.pannelProjectTitle')
+        content.children[0].remove()
+
+        let projectContainer = loadProjectContent(pannelProject, content)
+        let projectLower = projectContainer[1]
+        content.appendChild(projectContainer)
+
+      })
     });
 
   })
-
-
-
-
-
-  
-
-
-
-
-
 
 
   sideBar.appendChild(projects)
@@ -275,4 +293,4 @@ function loadPage() {
   });
 }
 
-export {loadPage};
+export {loadPage, projectLibrary, projectTasks, Project, deleteContent};

@@ -14,12 +14,12 @@ class Library {
     return new Library(taskTitle, taskDescriptionValue, taskDate);
   }
 
-  static addTask(newTask) {
+  static addTask(newTask,taskLibrary) {
     taskLibrary.push(newTask);
   }
 }
 
-function completeEventListener(complete, displayTasks) {
+function completeEventListener(taskLibrary,complete, displayTasks) {
   complete.addEventListener('click', () => {
     displayTasks.remove();
     const taskIndex = taskLibrary.findIndex((task) => task.title === displayTasks.querySelector('.taskDisplayTitle').textContent);
@@ -45,7 +45,7 @@ function displayTasks(taskLibrary) {
     complete.classList.add('complete');
     complete.textContent = 'o';
 
-    completeEventListener(complete, displayTasks);
+    completeEventListener(taskLibrary,complete, displayTasks);
 
     const taskDisplayTitle = document.createElement('div');
     taskDisplayTitle.classList.add('taskDisplayTitle');
@@ -170,7 +170,7 @@ function cancelEventListener(button, form) {
   });
 }
 
-function taskListener(addTaskBox, lower) {
+function taskListener(taskLibrary,addTaskBox, lower) {
   addTaskBox.addEventListener('click', () => {
     const form = document.createElement('form');
     form.classList.add('form');
@@ -223,19 +223,24 @@ function taskListener(addTaskBox, lower) {
     submit.append(add);
 
     lower.insertBefore(form, addTaskBox);
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const newTask = Library.getTaskValues(taskName, taskDescription, dueDate);
-      Library.addTask(newTask);
-      console.table(taskLibrary);
-      // Clear form
-      form.remove();
+    formSubmission(form,taskName,taskDescription,dueDate)
+  });
 
-      // Add task to screen
-      const taskDisplayContainer = displayTasks(taskLibrary);
-      lower.prepend(taskDisplayContainer.children[taskDisplayContainer.children.length - 1]);
-    });
+  function formSubmission(form,taskName,taskDescription,dueDate){
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newTask = Library.getTaskValues(taskName, taskDescription, dueDate);
+    Library.addTask(newTask,taskLibrary);
+
+    // Clear form
+    form.remove();
+    console.log('here')
+
+    // Add task to screen
+    const taskDisplayContainer = displayTasks(taskLibrary);
+    lower.prepend(taskDisplayContainer.children[taskDisplayContainer.children.length - 1]);
   });
 }
+}
 
-export { taskListener, displayTasks, displayTasksDueToday, displayTasksUpcoming, Library, taskLibrary };
+export { taskListener, displayTasks, displayTasksDueToday, displayTasksUpcoming, Library, taskLibrary, cancelEventListener };

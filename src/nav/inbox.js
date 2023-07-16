@@ -1,4 +1,5 @@
 import {taskListener} from "./task"
+import { taskLibrary } from "./task"
 function createInboxUpper(){
     const inboxUpper = document.createElement('div')
     inboxUpper.classList.add('inboxUpper')
@@ -37,7 +38,7 @@ function createInboxLower(){
     addTaskBox.appendChild(addTaskText)
 
     // Event listener
-    taskListener(addTaskBox,inboxLower)
+    taskListener(taskLibrary,addTaskBox,inboxLower)
     return inboxLower
 }
 
